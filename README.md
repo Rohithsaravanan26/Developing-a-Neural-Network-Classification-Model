@@ -48,8 +48,16 @@ Evaluate the trained model on test data using accuracy, confusion matrix, and cl
 ### Register Number:212225240121
 
 ```
-from google.colab import drive
-drive.mount('/content/drive')
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torch.nn.functional as F
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from torch.utils.data import TensorDataset, DataLoader
 
 # Load dataset
 data = pd.read_csv('/content/drive/MyDrive/customers.csv')
